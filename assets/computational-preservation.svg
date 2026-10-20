@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 284" role="img" aria-labelledby="title desc">
+<title id="title">What survives neural network modification?</title>
+<desc id="desc">Three conceptual layers: parameters, recurrent hidden-state transition, and native behavior. An audit compares whether each survives a model change. This is a conceptual diagram, not a measured experiment.</desc>
+<rect width="1140" height="284" rx="22" fill="#f6f8fb"/>
+<text x="48" y="49" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#1b2a40">What survives model modification?</text>
+<text x="48" y="76" font-family="Arial, sans-serif" font-size="14" fill="#516075">Conceptual audit of parameters, recurrent computations, and behavior</text>
+<g font-family="Arial, sans-serif">
+  <rect x="48" y="104" width="234" height="101" rx="12" fill="#e8eff9" stroke="#6386b7" stroke-width="1.5"/>
+  <text x="165" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#344f75">PARAMETERS</text>
+  <text x="165" y="169" text-anchor="middle" font-size="29" fill="#192d4a">θ</text>
+  <path d="M 299 154 H 357" stroke="#6d7f98" stroke-width="2.5"/>
+  <path d="M 346 147 L 357 154 L 346 161" fill="none" stroke="#6d7f98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="374" y="104" width="398" height="101" rx="12" fill="#e9f3f2" stroke="#599187" stroke-width="1.5"/>
+  <text x="573" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#38675f">RECURRENT COMPUTATION</text>
+  <text x="573" y="167" text-anchor="middle" font-size="24" fill="#203f3b">hₜ₊₁ = Fθ(hₜ, uₜ)</text>
+  <text x="573" y="189" text-anchor="middle" font-size="13" fill="#47736c">State update under input and history</text>
+  <path d="M 789 154 H 846" stroke="#6d7f98" stroke-width="2.5"/>
+  <path d="M 835 147 L 846 154 L 835 161" fill="none" stroke="#6d7f98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="863" y="104" width="229" height="101" rx="12" fill="#fbf1e6" stroke="#bf9367" stroke-width="1.5"/>
+  <text x="977" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#85633d">NATIVE BEHAVIOR</text>
+  <text x="977" y="169" text-anchor="middle" font-size="28" fill="#614a2c">yₜ</text>
+  <text x="570" y="247" text-anchor="middle" font-size="17" font-weight="600" fill="#34445c">Agreement at one level does not imply preservation at the next.</text>
+  <text x="570" y="266" text-anchor="middle" font-size="12" fill="#6a7787">Illustrative schematic · no empirical result depicted</text>
+</g>
+</svg>

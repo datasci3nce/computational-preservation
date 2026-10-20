@@ -25,3 +25,18 @@ The remote example targets `datasci3nce` as requested. First create an **empty**
 - Add only original experiment archives you have permission to redistribute, respecting checkpoint licenses and dataset privacy.
 - Recover missing raw data and figures only from verified archives; never regenerate an empirical plot from rounded prose numbers.
 - Verify the CI checks before publishing scientific claims.
+
+## Updating an already-published repository after fixing CRLF hash failures
+
+If the repository is already on GitHub, extract the **patch ZIP** into the local repository root (where `README.md` lives), overwriting the listed files. It deliberately includes the original unmodified evidence files. Then run:
+
+```powershell
+python -m unittest discover -s tests -v
+git add .
+git add -f records/2026-10-18/CLAIM_REGISTER.csv
+git add -f paper/nca_fold_case_study/NCA_Fold_Technical_Draft.pdf
+git commit -m "Fix GitHub math, preserve frozen evidence bytes and include technical PDF"
+git push origin main
+```
+
+Check the GitHub Actions tab for green checks and inspect the diagram/PDF on GitHub. `-text` in `.gitattributes` prevents Git modifying the archived source files on commit or checkout. No evidence hash should be changed to make CI pass.

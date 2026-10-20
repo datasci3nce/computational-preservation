@@ -11,13 +11,8 @@ When we align, average, prune, fine-tune or distill learned networks, **what exa
 
 For a recurrent network, three objects matter:
 
-\[
-\underbrace{\theta}_{\text{parameters}}
-\longrightarrow
-\underbrace{h_{t+1}=F_\theta(h_t,u_t)}_{\text{representations and recurrence}}
-\longrightarrow
-\underbrace{y_t}_{\text{native behavior}}.
-\]
+![Conceptual diagram linking model parameters, recurrent hidden-state updates, and native behavior; agreement at one level does not establish preservation at another.](assets/computational-preservation.svg)
+
 
 Similar scores do not imply similar internal computations. Different parameterizations can implement the same function under a valid change of coordinates. A hidden state can retain decodable information that the model cannot use at a later decision. We study these distinctions using small feed-forward robotic controllers, neural cellular automata (NCAs), and gated recurrent units (GRUs).
 
@@ -61,16 +56,16 @@ Architecture-specific folders under [`experiments/`](experiments/README.md) desc
 
 The NCA experiment concerns the *three-microstep external decision map* \(T_\theta\), with neutral-input fixed-point residual
 
-\[
+$$
 G(h,\lambda)=T_{\theta(\lambda)}(h;u_0)-h.
-\]
+$$
 
 Close to the tracked fold, derivatives define a local approximation
 
-\[
+$$
 z_{t+1}-z_t\simeq a(\lambda-\lambda_*)+bz_t^2,
 \quad a\simeq-0.05493465,\quad b\simeq0.01169046.
-\]
+$$
 
 This explains a *local passage-time bottleneck* in one heavily investigated system. The source account separates discovery, within-model checks, post-hoc controls, and held-out histories. Importantly, the path changes \(W_{in}\) and \(b_h\) between two **merged variants**, not between two independently qualified parent networks. It does not establish that averaging competent specialists caused the observed fold.
 

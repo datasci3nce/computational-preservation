@@ -17,7 +17,11 @@ def check_hashes() -> None:
         target = ROOT / row['path']
         assert target.exists(), f'Missing original source record: {target}'
         actual = hashlib.sha256(target.read_bytes()).hexdigest()
-        assert actual == row['sha256'], f'Frozen source changed: {row["path"]}'
+        assert actual == row['sha256'], (
+            f'Frozen source hash mismatch: {row["path"]}. '
+            'Check that .gitattributes preserves original bytes (especially CRLF), '
+            'then restore the file from the verified source archive; do not update its recorded hash.'
+        )
 
 
 def check_manifests() -> None:
@@ -36,13 +40,13 @@ def check_links() -> None:
     # absent and their absence must stay explicit until original figures arrive.
     excluded = {ROOT/'paper/nca_fold_case_study/RESEARCH_NOTE.md'}
     # The archived NCA note links to a missing original empirical PNG.
-    # Image links are intentionally not tested as normal Markdown links.
+    # Validate ordinary local links plus README assets. Original note's absent empirical images are excluded.
     missing = []
     for path in ROOT.rglob('*.md'):
         if path in excluded:
             continue
         content = path.read_text(encoding='utf-8')
-        for raw in re.findall(r'(?<!!)\[[^\]]+\]\(([^)]+)\)', content):
+        for raw in re.findall(r'!?\[[^\]]+\]\(([^)]+)\)', content):
             if raw.startswith(('http://', 'https://', '#', 'mailto:')):
                 continue
             target = raw.split('#', 1)[0].strip()

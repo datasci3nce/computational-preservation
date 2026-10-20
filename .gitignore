@@ -13,6 +13,7 @@ Thumbs.db
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
+!paper/nca_fold_case_study/NCA_Fold_Technical_Draft.pdf
 *.npy
 *.npz
 *.pt

@@ -1,0 +1,12 @@
+# Freeze original research records byte-for-byte, including line endings.
+# These SHA-256-checked source files are archival, not editable working copies.
+/records/2026-10-18/FREEZE_20261018.md -text
+/records/2026-10-18/ADDENDUM_20261018.md -text
+/records/2026-10-18/CLAIM_REGISTER.csv -text
+/paper/nca_fold_case_study/RESEARCH_NOTE.md -text
+/paper/nca_fold_case_study/EVIDENCE_REGISTER.md -text
+
+# Normalise line endings for non-archival source files, not for frozen records.
+*.py text eol=lf
+*.yml text eol=lf
+*.svg text eol=lf
