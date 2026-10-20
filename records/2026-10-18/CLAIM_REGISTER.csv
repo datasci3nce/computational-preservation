@@ -1,0 +1,17 @@
+id,claim,evidence_status,source_report,extrapolation_to_avoid
+D1,Selected three-GRU ensemble succeeds whereas aligned parameter average fails,Executed; selected trio,OUTPUT_ASSUMPTIONS_MINI_V1,Same-task memory; not LLM probability mixture or top-k
+D2,64 late supervision boosts selected-trio t512 recall over early despite 64 labels,Executed; exploratory comparison,CAUSAL_DISTILLATION_BATCH_20261018,Equal label counts not full training/data-budget match; not universal optimality
+D3,Fresh GRU pair shows t512 distillation success but severe t1024 loss,Executed; fresh trained pair,MODEL_MECHANISM_OOD_20261018,No durable long-horizon memory preserved; parents/ensemble better
+D4,NCA output-trained forcing and recurrent updates restore binary t512 recall,Executed; one selected NCA,CAUSAL_DISTILLATION_BATCH_20261018,All strict three-way recall fails; teacher is known model edit
+D5,Small student update predicts tracked NCA fold shift by derivatives,Pre-solve predictions; same NCA,CAUSAL_DISTILLATION_BATCH_20261018,Local first-order calculation; not unknown-model diagnosis
+D6,Fold crossing correlates with gradual binary recovery and matched-fold alternatives,Exploratory; selected NCA; new inputs,CAUSAL_DISTILLATION_BATCH_20261018,Fold location not necessary/sufficient/unique general causal mediator
+D7,Planted GRU readout vs input vs recurrence faults yield same metric with distinct hidden causes,Executed; constructed faults on fresh GRUs,MODEL_MECHANISM_OOD_20261018,"Known fault families, not blind causal discovery or natural merge defect"
+D8,Early readout replacement >=90% prediction failed on held-out planted readout faults,Frozen prediction failed,MODEL_MECHANISM_OOD_20261018,85.9%; replacement head also harms undamaged models
+D9,A post-hoc scalar bias correction fixes known synthetic bias +0.8,Exploratory after failure,MODEL_MECHANISM_OOD_20261018,Not general repair; uses knowledge of fault family
+D10,Hand-engineered equal-output systems can diverge causally under intervention,Constructive example,MODEL_MECHANISM_OOD_20261018,Not trained-network mechanism discovery or novel symmetry proof
+A1,"Source ANN actual checkpoint has 8 inputs and 48 weights, conflicting with thesis prose",Source/version audit,ANN_SELECTIVE_DISTILL_V1,Exact thesis figure/model version unresolved
+A2,"Source ANN Homing teacher is weak (1/8 reaches, 5/8 crashes)",Executed headless 8-start pilot,ANN_SELECTIVE_DISTILL_V1,Not native Pygame original thesis conditions; poor qualification
+A3,Full distillation copies Homing action/light response but not reliable closed-loop homing,Executed selected checkpoint,ANN_SELECTIVE_DISTILL_V1,No explicit exploration removal or successful capability preservation
+A4,Removing distilled hidden unit 3 strongly suppresses fixed-sensor light-sensitive steering,Executed post-hoc neuron ablation,ANN_SELECTIVE_DISTILL_V1,Not symmetry-invariant unit semantic or reliable homing circuit
+S1,Consistent ANN hidden permutation preserves function,Exact mathematical symmetry checked numerically,ANN_SELECTIVE_DISTILL_V1,Do not equate identical task score with exact functional symmetry
+O1,"Original NCA fold case remains selected, binary-only and not general method",Frozen original scope,RESEARCH_NOTE_MERGE_DYNAMICS,No independent qualified NCA mechanism replication

@@ -1,0 +1,86 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref,microtype}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\title{A Fold-Associated Forgetting Mechanism in a Merge-Derived\\ Neural Cellular Automaton\\\large Selected-Case Technical Draft}
+\author{Kishore Kumar Mariappan\\\small Independent researcher}
+\date{20 October 2026 --- exploratory manuscript draft}
+\begin{document}
+\maketitle
+\begin{abstract}
+We examine how parameter changes in one previously selected recurrent neural cellular automaton (NCA) alter delayed signed-cue behavior. Along a restricted interpolation between two \emph{merge-derived} models, a neutral-input fixed-point continuation identifies a local saddle-node fold. Natural cue-conditioned trajectories pass through the associated slow region. A reduced normal form, whose coefficients were derived from the decision map rather than fit to crossing durations, predicts passage through a specified local window with an approximately 0.22-decision mean absolute discrepancy across nine correlated path conditions. State, parameter, timing, and neighbor-coupling interventions connect this slow regime to long-horizon binary recall. However, strict no-cue-inclusive retention is not recovered; ordinary task-gradient edits are competitive; and cue-independent forcing can mimic the benefit of a selected directed edge cut. This is an exploratory, within-system causal and dynamical case study, not a general repair method, independent-model replication, or demonstration that merging two fully qualified memory specialists caused this fold. Original code/checkpoints and raw output arrays must be restored before scientific submission.
+\end{abstract}
+
+\section{Introduction}
+Averaging neural parameters after an exact alignment does not ensure that a learned recurrent computation survives. A network may retain linearly decodable cue information yet fail at its native readout, or exhibit short-horizon behavioral success followed by long-horizon failure. The relevant object for delayed decisions is the state transition map under the full temporal protocol, not merely parameter distance or single-step output agreement.
+
+Our focus is an already selected seven-cell, two-hidden-channel NCA. The goal is not to prove a new saddle-node theorem, but to ask whether a local dynamical explanation offers quantitative and intervention-relevant information about one neural-network modification. Analyses of fixed points and slow recurrent dynamics are established techniques \cite{sussillo2013,dinc2025}; our work uses them in a particular merge-derived case. Exact coordinate matching is an essential control rather than a preservation guarantee \cite{ainsworth2023}.
+
+\section{System and provenance}
+The NCA uses seven spatial cells, two hidden channels per cell, and three internal microsteps per externally counted decision. Denote the full decision map by $T_{\theta}(h;u)$, with $h$ collecting cellular hidden states. In a previously selected seed-4/5 system, the path connects an input-aligned merged variant $F$ and an activation-aligned merged variant $S$ by varying only input parameters and hidden bias:
+\begin{equation}
+\theta(\lambda)=\left(W_{\rm in}^{F}+\lambda(W_{\rm in}^{S}-W_{\rm in}^{F}),\quad b_h^{F}+\lambda(b_h^{S}-b_h^{F}),\quad\text{other blocks fixed}\right).
+\end{equation}
+This is \textbf{not} a direct interpolation of two independently robust, task-qualified parents. The original NCA parents were not both robustly qualified for strict positive/neutral/negative memory. Accordingly, the reported gains concern \emph{binary signed-cue retention}, not full three-way memory restoration. Model and path selection preceded the present technical synthesis.
+
+\section{Fold analysis and local prediction}
+For a constant neutral input $u_0$, define the fixed-point residual of the \emph{full three-microstep decision map}:
+\begin{equation}
+G(h,\lambda)=T_{\theta(\lambda)}(h;u_0)-h.
+\end{equation}
+At a tracked saddle-node $(h_*,\lambda_*)$, the residual vanishes and the state Jacobian $D_hG$ has a zero eigenvalue (a critical null direction). The refined numerical fold is reported at
+\begin{equation}
+\lambda_*=0.20091324.
+\end{equation}
+Projection along the critical left and right vectors, using derivatives of the map, yields a local scalar normal form
+\begin{equation}
+ z_{t+1}-z_t\simeq a(\lambda-\lambda_*)+b z_t^2,
+ \qquad a\simeq -0.05493465,\qquad b\simeq 0.01169046.
+\end{equation}
+Write $A=a(\lambda-\lambda_*)$. For $A>0$ and a small symmetric critical-coordinate window $[-w,w]$, the corresponding bottleneck approximation is
+\begin{equation}
+ T_{\rm pass}(w,\lambda)\simeq\frac{2}{\sqrt{Ab}}\arctan\!\left(w\sqrt{\frac{b}{A}}\right).
+\end{equation}
+For $w=0.10$ the prior report gives a mean absolute discrepancy of approximately \textbf{0.22 external decisions} over nine correlated path conditions. The coefficients are derivative-derived rather than fitted to observed passages. This is \emph{local window-crossing time}, not a 0.22-step prediction error for the total behavioral forgetting lifetime. Different exploratory windows gave different discrepancies; the report must retain the selected $w$ and condition definitions.
+
+A separately reported operational lifetime was the first time after decision 16 when hidden-state separation fell below $25\%$ of its decision-16 value. It exhibited a descriptive near-half-power scaling in eight correlated uncensored conditions, not a new universal scaling result or proof of complete memory loss.
+
+\section{Causal interventions and alternatives}
+The existing selected-case audits report that fold-directed bias changes, critical-mode state perturbations, and intervention timing alter binary retention and tracked dynamical structure. Uniform neighbor-coupling variation also moved the fold: $d\lambda_*/d\gamma\simeq0.674904$, with small-perturbation predictions and nonlinear solves in close agreement. A selected directed message cut at cell $2\to1$ improved binary recall, but \textbf{other cuts also worked}, and fixed cue-independent forcing reproduced much of the advantage. The cut does not demonstrate a unique information-carrying memory edge.
+
+\begin{table}[h]
+\centering
+\caption{Selected within-NCA negative or competing controls transcribed from frozen notes. Exact trial matrices are not bundled here.}
+\begin{tabular}{p{0.30\textwidth}p{0.59\textwidth}}
+\toprule
+Control & Observed constraint on interpretation\\
+\midrule
+Ordinary task-gradient bias edit & Comparable or stronger task repair in evaluated conditions; fold-derived direction is not an established superior optimizer.\\
+Neutral/no-cue trials & Binary signed recovery does not satisfy strict three-way task qualification.\\
+Stronger input noise & Recovery weakens; robustness is not general.\\
+Cue-independent fixed forcing & Can largely mimic a selected neighbor-edge cut; unique memory transport is not isolated.\\
+Early fold-feature OOD ranking & Exploratory prognostic features did not beat simpler parameter-position scoring.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Cross-architecture scope}
+Independent GRU studies address a \emph{related but different} failure mode. A cohort of 96 models contained 21 qualified GRUs at 512 decisions, and their dependent pairwise merges supplied evidence of actual capability damage. A selected candidate-activation clamp recovered a donor signed effect in held-out histories, but it did not reproduce the NCA fold. Later output-supervised students showed substantial horizon dependence, including a fresh-pair result of 53/64 at 512 but 7/64 at 1024 for late-64 supervision. These experiments motivate prospective prediction but do not support transferring this fold explanation to GRUs or LLM safety circuitry.
+
+\section{Discussion and limitations}
+\textbf{Positive result:} within a selected recurrent model, a local fixed-point structure quantitatively organizes a trajectory bottleneck and gives intervention-relevant predictions. \textbf{Important negative result:} this account neither produces a general repair selector outperforming simple baselines nor verifies fully qualified memory-composition failure in the original NCA parents.
+
+The studied NCA was extensively inspected; additional cue banks are conditional within-model tests, not independent checkpoint replications. The manuscript does not provide the original numerical pipeline, training code or raw arrays. Before submission, original archives must be recovered and hashed, the augmented fold solve and nine-condition crossings rerun, and the gradient, noise, neutral-cue and forcing controls regenerated. Source and validation status are tracked in the repository's evidence and checkpoint manifests.
+
+A stronger next study would preregister diagnostics on development models and test unseen qualified independent recurrent networks, comparing future-outcome predictions with parameter distance, short-horizon behavior and simple equal-cost repairs. Failure against those baselines should be reported as a failure of the general predictive claim, not addressed by retrospectively changing qualification criteria.
+
+\section*{Data and reproducibility status}
+This is a LaTeX adaptation of the previously frozen exploratory ``RESEARCH\_NOTE.md'' and its evidence register. Reported numerical values have \emph{not} been independently re-executed for this manuscript. The repository contains frozen source documents, hashes and missing-artifact manifests; no original checkpoints or empirical figures are included. Do not cite this draft as a peer-reviewed or archived paper.
+
+\begin{thebibliography}{9}
+\bibitem{sussillo2013} D. Sussillo and O. Barak. Opening the Black Box: Low-Dimensional Dynamics in High-Dimensional Recurrent Neural Networks. \emph{Neural Computation}, 2013. \url{https://doi.org/10.1162/NECO_a_00409}.
+\bibitem{ainsworth2023} S. K. Ainsworth, J. Hayase, and S. Srinivasa. Git Re-Basin: Merging Models modulo Permutation Symmetries. 2023. \url{https://arxiv.org/abs/2209.04836}.
+\bibitem{dinc2025} F. Dinc et al. A ghost mechanism: An analytical model of abrupt learning in recurrent networks. arXiv:2501.02378v2, 2026. \url{https://arxiv.org/abs/2501.02378v2}.
+\bibitem{makelov2023} A. Makelov, G. Lange, and N. Nanda. Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching. 2023. \url{https://arxiv.org/abs/2311.17030}.
+\end{thebibliography}
+\end{document}

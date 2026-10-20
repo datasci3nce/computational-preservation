@@ -1,0 +1,16 @@
+source_name,repository_location,included,kind,verification_status
+FREEZE_20261018.md,records/2026-10-18/FREEZE_20261018.md,true,frozen evidence synopsis,unaltered_copy
+ADDENDUM_20261018.md,records/2026-10-18/ADDENDUM_20261018.md,true,versioned addendum,unaltered_copy
+CLAIM_REGISTER.csv,records/2026-10-18/CLAIM_REGISTER.csv,true,claim register,unaltered_copy
+RESEARCH_NOTE.md,paper/nca_fold_case_study/RESEARCH_NOTE.md,true,selected-case original note,unaltered_copy
+EVIDENCE_REGISTER.md,paper/nca_fold_case_study/EVIDENCE_REGISTER.md,true,evidence register,unaltered_copy
+REPORT(20261015-210943).md,,false,original experiment report,needs_source_archive
+REPORT(20261015-213922).md,,false,original experiment report,needs_source_archive
+REPORT(20261015-215716).md,,false,original experiment report,needs_source_archive
+NCA_NEIGHBOR_COUPLING_AUDIT_V1.zip,,false,experiment code/checkpoints/results archive,needs_source_archive
+GRU_CANDIDATE_MEDIATION_V6.zip,,false,experiment code/checkpoints/results archive,needs_source_archive
+OUTPUT_ASSUMPTIONS_MINI_V1.md,,false,original experiment report,needs_source_archive
+CAUSAL_DISTILLATION_BATCH_20261018.md,,false,original experiment report,needs_source_archive
+MODEL_MECHANISM_OOD_20261018.md,,false,original experiment report,needs_source_archive
+ANN_SELECTIVE_DISTILL_V1.md,,false,original experiment report,needs_source_archive
+ANN_SELECTIVE_DISTILL_V1.zip,,false,experiment source archive,needs_source_archive

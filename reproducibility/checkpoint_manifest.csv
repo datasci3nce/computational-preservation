@@ -1,0 +1,10 @@
+artifact_id,architecture,original_identifier,needed_for,present_in_repo,status,provenance_note
+nca_selected_pair,NCA,seed-4/5 F-to-S merged variants,original parameter path,false,missing,"Selected path varies W_in and b_h, not parent-to-parent"
+nca_fold_solver,NCA,REPORT(20261015-213922).md + underlying archive,verify 0.20091324 fold,false,missing,"Current note transcribes archived results"
+nca_fold_predictions,NCA,REPORT(20261015-213922).md raw tables,verify local passage-time MAE,false,missing,"Nine correlated lambda conditions; window w=0.10"
+nca_neighbor_coupling,NCA,NCA_NEIGHBOR_COUPLING_AUDIT_V1.zip,verify coupling and edge controls,false,missing,"Original PNG and raw data absent"
+gru_candidate_v6,GRU,GRU_CANDIDATE_MEDIATION_V6.zip,verify selected rank-one rescue,false,missing,"Conditional clamp; selected GRU"
+gru_qualified_cohort,GRU,96-trained-21-qualified cohort archive,verify merging pairs,false,missing,"Pairs share parents"
+gru_distillation,GRU,CAUSAL_DISTILLATION_BATCH_20261018 source archive,verify distillation and horizon,false,missing,"Fresh pair 512 and 1024 results"
+ann_evo_test,ANN,evo_test (2).zip,recover executable thesis source and weights,false,missing,"8 inputs/48 weights differ from thesis prose"
+ann_selective_distill,ANN,ANN_SELECTIVE_DISTILL_V1.zip,reproduce headless light-response audit,false,missing,"Pilot 1/8 goals; not native Pygame reconstruction"
